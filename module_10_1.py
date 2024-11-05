@@ -1,4 +1,4 @@
-import threading
+from threading import Thread
 import time
 
 
@@ -24,10 +24,10 @@ if __name__ == '__main__':
     start_thread_time = time.time()
 
     threads = []
-    threads.append(threading.Thread(target=write_words, args=(10, 'example5.txt')))
-    threads.append(threading.Thread(target=write_words, args=(30, 'example6.txt')))
-    threads.append(threading.Thread(target=write_words, args=(200, 'example7.txt')))
-    threads.append(threading.Thread(target=write_words, args=(100, 'example8.txt')))
+    threads.append(Thread(target=write_words, args=(10, 'example5.txt')))
+    threads.append(Thread(target=write_words, args=(30, 'example6.txt')))
+    threads.append(Thread(target=write_words, args=(200, 'example7.txt')))
+    threads.append(Thread(target=write_words, args=(100, 'example8.txt')))
 
     for thread in threads:
         thread.start()
